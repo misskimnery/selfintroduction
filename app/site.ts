@@ -1,3 +1,8 @@
+// 정적 import 로 불러오면 빌드 시 파일명에 내용 해시가 붙는다.
+// 사진을 교체해도 URL 이 바뀌므로 이미지 캐시가 옛 버전을 물고 있을 일이 없다.
+import musicCover from "../public/off-hours/music.jpg";
+import walkPhoto from "../public/off-hours/walk.jpg";
+
 export const NAME = "김태연";
 export const NAME_EN = "Kim Taeyeon";
 export const CATCHPHRASE =
@@ -24,12 +29,12 @@ export const INTERESTS = [
 export const HOBBIES = [
   {
     label: "노래 듣기",
-    image: "/off-hours/music.jpg",
+    image: musicCover,
     alt: "즐겨 듣는 앨범 커버 — 밤의 거리 풍경",
   },
   {
     label: "산책하기",
-    image: "/off-hours/walk.jpg",
+    image: walkPhoto,
     alt: "산책 중인 반려견",
   },
 ];
