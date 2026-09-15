@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Arrow } from "./components/Arrow";
 import { Nav } from "./components/Nav";
 import { Guestbook } from "./components/Guestbook";
@@ -27,7 +28,7 @@ export default function Home() {
           <br />
           당연한 것을 <em>의심하고</em>,
           <br />
-          조금씩 바꿔보려 합니다.
+          조금씩 바꿔보고 싶습니다.
         </p>
         <div className="hero__cta">
           <a className="btn btn--solid" href="#guestbook">
@@ -46,16 +47,7 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="heroVisual aurora aurora--fade">
-        <div className="heroVisual__card glass">
-          <p className="heroVisual__quote serifKo">
-            익숙해서 보이지 않게 된 자리가,
-            <br />
-            대체로 가장 급한 자리였습니다.
-          </p>
-          <p className="heroVisual__label micro">DWNC · 2026</p>
-        </div>
-      </div>
+      <div className="heroVisual aurora aurora--fade" aria-hidden="true" />
 
       {/* ---------- S2 · 관심사 & 취미 ----------------------------------- */}
       <section id="about" className="section pad">
@@ -87,13 +79,22 @@ export default function Home() {
 
         <div style={{ marginTop: "clamp(40px, 6vw, 72px)" }}>
           <p className="micro">Off hours</p>
-          <div className="chips">
+          <ul className="offGrid">
             {HOBBIES.map((hobby) => (
-              <span key={hobby} className="chip">
-                {hobby}
-              </span>
+              <li key={hobby.label}>
+                <div className="off__frame">
+                  <Image
+                    src={hobby.image}
+                    alt={hobby.alt}
+                    fill
+                    sizes="(max-width: 900px) 45vw, 260px"
+                    className="off__img"
+                  />
+                </div>
+                <p className="off__label">{hobby.label}</p>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -158,9 +159,6 @@ export default function Home() {
             <span className="serifKo">언제든 편하게</span>
           </h2>
           <div className="split__aside">
-            <p className="body" style={{ marginBottom: "var(--s-5)" }}>
-              DM이 가장 빠릅니다. 하고 싶은 얘기가 길어도 괜찮아요.
-            </p>
             <div className="contactLinks">
               <a
                 className="btn"

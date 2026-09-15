@@ -1,7 +1,6 @@
-import { Suspense } from "react";
 import { isSupabaseConfigured } from "@/lib/guestbook";
 import { GuestbookForm } from "./GuestbookForm";
-import { GuestbookFeed, GuestbookSkeleton } from "./GuestbookFeed";
+import { GuestbookFeed } from "./GuestbookFeed";
 
 export function Guestbook() {
   const configured = isSupabaseConfigured();
@@ -29,9 +28,7 @@ export function Guestbook() {
           <div className="gb">
             <GuestbookForm />
             <div>
-              <Suspense fallback={<GuestbookSkeleton />}>
-                <GuestbookFeed />
-              </Suspense>
+              <GuestbookFeed />
             </div>
           </div>
         ) : (

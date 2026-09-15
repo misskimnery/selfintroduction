@@ -150,22 +150,7 @@
 .hero__meta { margin-top: var(--s-6); color: var(--c-muted); font-size: var(--t-small); }
 .hero__cta { display: flex; justify-content: center; gap: var(--s-3); flex-wrap: wrap; margin-top: var(--s-7); }
 
-.heroVisual { height: clamp(300px, 44vw, 500px); display: grid; place-items: center; }
-.heroVisual__card {
-  position: relative;
-  z-index: 2;
-  padding: clamp(28px, 4vw, 46px) clamp(30px, 5vw, 62px);
-  text-align: center;
-  max-width: min(560px, 82vw);
-}
-.heroVisual__quote {
-  font-size: clamp(1.02rem, 2.4vw, 1.9rem);
-  line-height: 1.55;
-  color: var(--c-olive-900);
-  text-wrap: balance;
-}
-.heroVisual__label { margin-top: var(--s-4); color: var(--c-tan-700); }
-
+.heroVisual { height: clamp(220px, 32vw, 380px); }
 /* ---------- asymmetric split (ref: big head left, small copy right) ---- */
 .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 6vw, 80px); align-items: start; }
 .split__aside { padding-top: clamp(8px, 2.2vw, 30px); }
@@ -174,6 +159,25 @@
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 44px); margin-top: clamp(44px, 7vw, 88px); }
 .feature { border-top: 1px solid var(--c-line); padding-top: var(--s-4); }
 .feature h3 { margin-bottom: var(--s-3); }
+
+.offGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+  margin-top: var(--s-5);
+  max-width: 520px;
+}
+.off__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--c-beige-100);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--sh-sm);
+}
+.off__img { object-fit: cover; }
+.off__label { margin-top: var(--s-3); font-size: var(--t-small); color: var(--c-ink-2); }
 
 .chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-5); }
 .chip {
@@ -286,29 +290,6 @@
 .linkBtn--strong:hover { color: var(--c-olive-900); }
 .linkBtn--danger { color: #8A4433; font-weight: var(--fw-semi); }
 .linkBtn--danger:hover { color: #6E3327; }
-
-/* 목록 로딩 자리 */
-.gbItem--skeleton { display: grid; gap: var(--s-3); }
-.skel {
-  display: block;
-  height: 11px;
-  border-radius: var(--r-pill);
-  background: linear-gradient(
-    90deg,
-    rgba(124, 115, 95, 0.10) 0%,
-    rgba(124, 115, 95, 0.20) 50%,
-    rgba(124, 115, 95, 0.10) 100%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.4s linear infinite;
-}
-.skel--name { width: 86px; height: 14px; }
-.skel--time { width: 52px; }
-.skel--line { width: 100%; }
-@keyframes shimmer {
-  from { background-position: 200% 0; }
-  to   { background-position: -200% 0; }
-}
 
 /* ---------- footer -------------------------------------------------------- */
 .footer {

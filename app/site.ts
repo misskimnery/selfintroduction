@@ -1,7 +1,7 @@
 export const NAME = "김태연";
 export const NAME_EN = "Kim Taeyeon";
 export const CATCHPHRASE =
-  "사회의 구석진 곳을 들여다보고, 당연한 것을 의심하고, 조금씩 바꿔보려 합니다.";
+  "사회의 구석진 곳을 들여다보고, 당연한 것을 의심하고, 조금씩 바꿔보고 싶습니다.";
 
 export const INSTAGRAM_ID = "@tykkkim";
 export const INSTAGRAM_URL = "https://instagram.com/tykkkim";
@@ -21,7 +21,18 @@ export const INTERESTS = [
   },
 ];
 
-export const HOBBIES = ["노래 듣기", "공상에 빠지기"];
+export const HOBBIES = [
+  {
+    label: "노래 듣기",
+    image: "/off-hours/music.jpg",
+    alt: "즐겨 듣는 앨범 커버 — 밤의 거리 풍경",
+  },
+  {
+    label: "산책하기",
+    image: "/off-hours/walk.jpg",
+    alt: "산책 중인 반려견",
+  },
+];
 
 export const PROJECTS = [
   {
